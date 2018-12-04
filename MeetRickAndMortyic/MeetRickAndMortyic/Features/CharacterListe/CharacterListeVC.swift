@@ -31,6 +31,7 @@ class CharacterListeVC: UIViewController {
         }
     }
     private let cellSpacingHeight: CGFloat = 10
+    private var isSortActivated = false
 
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -130,11 +131,14 @@ class CharacterListeVC: UIViewController {
                     strongSelf.characterResponse?.setResults(newResults: characters.results)
                     strongSelf.characterResponse?.setNewInfo(infos: characters.info)
 
-                    strongSelf.sortButton.title = "Sort"
+                    if strongSelf.isSortActivated {
+                        strongSelf.sortButton.title = "Sort"
+                        strongSelf.showToast(message: "Filter desactivated.\nReason: New characters loaded.")
+                        strongSelf.isSortActivated = false
+                    }
 
                     strongSelf.characterTV.reloadData()
 
-                    strongSelf.showToast(message: "Filter desactivated.\nReason: New characters loaded.")
                 }
             }
         }
@@ -190,6 +194,9 @@ class CharacterListeVC: UIViewController {
                 first.status.rawValue > second.status.rawValue
             })
         }
+
+        isSortActivated = true
+
         characterTV.reloadData()
 
         sortButton.title = "Sort ✔"
