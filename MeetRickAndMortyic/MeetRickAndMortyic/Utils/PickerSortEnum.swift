@@ -10,13 +10,13 @@ import Foundation
 
 enum PickerSortEnum: String, CaseIterable {
 
-    case nameAlpha = "Name alphabetical order"
-    case nameAlphaInverse = "Name inverse alphabetical order"
-    case speciesAlpha = "Species alphabetical order"
-    case speciesAlphaInverse = "Species inverse alphabetical order"
-    case statusAlpha = "Status alphabetical order"
-    case statusAlphaInverse = "Status inverse alphabetical order"
-    case genderAlpha = "Gender alphabetical order"
-    case genderAlphaInverse = "Gender inverse alphabetical order"
+    case nameAlpha = "Name order"
+    case nameAlphaInverse = "Name inverse order"
+    case speciesAlpha = "Species order"
+    case speciesAlphaInverse = "Species inverse order"
+    case statusAlpha = "Status order"
+    case statusAlphaInverse = "Status inverse order"
+    case genderAlpha = "Gender order"
+    case genderAlphaInverse = "Gender inverse order"
     case noSort = "No sort"
 }
