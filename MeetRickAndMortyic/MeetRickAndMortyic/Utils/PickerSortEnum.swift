@@ -18,5 +18,5 @@ enum PickerSortEnum: String, CaseIterable {
     case statusAlphaInverse = "Status inverse alphabetical order"
     case genderAlpha = "Gender alphabetical order"
     case genderAlphaInverse = "Gender inverse alphabetical order"
-    case noSort = "Return"
+    case noSort = "No sort"
 }
