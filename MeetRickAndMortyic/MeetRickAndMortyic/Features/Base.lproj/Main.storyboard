@@ -239,6 +239,7 @@ de l'avatar</string>
                         <outlet property="loadingLabel" destination="GY7-rd-DTV" id="leo-h2-sSj"/>
                         <outlet property="loadingView" destination="qyN-XS-Cep" id="vtU-E4-mf4"/>
                         <outlet property="reessayerButton" destination="CvH-fL-eqF" id="JOs-S2-fsL"/>
+                        <outlet property="sortButton" destination="rdc-YR-WoW" id="b5E-3T-noy"/>
                         <outlet property="sortPicker" destination="ej8-M9-bpw" id="uip-c7-fMv"/>
                     </connections>
                 </viewController>

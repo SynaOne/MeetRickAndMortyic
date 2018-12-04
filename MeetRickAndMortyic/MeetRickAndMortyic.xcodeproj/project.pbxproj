@@ -19,6 +19,7 @@
 		571969B021B313E000E74E11 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571969AF21B313E000E74E11 /* ResponseError.swift */; };
 		571969B221B313FC00E74E11 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571969B121B313FC00E74E11 /* ApiService.swift */; };
 		572B482821B70078009611B3 /* PickerSortEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B482721B70078009611B3 /* PickerSortEnum.swift */; };
+		572B482A21B70F95009611B3 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B482921B70F95009611B3 /* ToastMessage.swift */; };
 		574ECFAF21B404B500D848B1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574ECFAE21B404B400D848B1 /* CharacterCell.swift */; };
 		574ECFB121B4102A00D848B1 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574ECFB021B4102A00D848B1 /* NotificationExtension.swift */; };
 		57E0304221B4490E00CFD0E3 /* CharacterDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0304121B4490E00CFD0E3 /* CharacterDetailsVC.swift */; };
@@ -43,6 +44,7 @@
 		571969AF21B313E000E74E11 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		571969B121B313FC00E74E11 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		572B482721B70078009611B3 /* PickerSortEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSortEnum.swift; sourceTree = "<group>"; };
+		572B482921B70F95009611B3 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		574ECFAE21B404B400D848B1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		574ECFB021B4102A00D848B1 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		57E0304121B4490E00CFD0E3 /* CharacterDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsVC.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				571969AF21B313E000E74E11 /* ResponseError.swift */,
 				574ECFB021B4102A00D848B1 /* NotificationExtension.swift */,
 				572B482721B70078009611B3 /* PickerSortEnum.swift */,
+				572B482921B70F95009611B3 /* ToastMessage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				571969AE21B313CA00E74E11 /* AlamofireExtension.swift in Sources */,
 				571969AA21B3138900E74E11 /* CharactersInfo.swift in Sources */,
 				571969B221B313FC00E74E11 /* ApiService.swift in Sources */,
+				572B482A21B70F95009611B3 /* ToastMessage.swift in Sources */,
 				571969B021B313E000E74E11 /* ResponseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
