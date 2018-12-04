@@ -198,27 +198,48 @@ de l'avatar</string>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="96y-nT-gB1"/>
                                 </connections>
                             </tableView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej8-M9-bpw">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="xpa-wu-idc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="G0J-9r-G91"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="B55-xQ-XH7"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qyN-XS-Cep" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4ae-Ra-Lps"/>
+                            <constraint firstItem="ej8-M9-bpw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="69U-fF-ZlS"/>
                             <constraint firstItem="JiQ-4R-RCl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="6YE-7y-itB"/>
                             <constraint firstItem="JiQ-4R-RCl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ARC-ky-2tK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ej8-M9-bpw" secondAttribute="bottom" id="Kj2-6T-byp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JiQ-4R-RCl" secondAttribute="bottom" id="R43-fU-OKY"/>
                             <constraint firstItem="qyN-XS-Cep" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="b1q-xt-DZC"/>
                             <constraint firstItem="qyN-XS-Cep" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="eYR-06-UV4"/>
+                            <constraint firstItem="ej8-M9-bpw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="mU2-AP-PLU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JiQ-4R-RCl" secondAttribute="trailing" constant="5" id="pZK-8d-XIT"/>
                             <constraint firstItem="qyN-XS-Cep" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="rgi-0a-nOt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Rick And Morty" id="7F0-fe-95X"/>
+                    <navigationItem key="navigationItem" title="Rick And Morty" id="7F0-fe-95X">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="rdc-YR-WoW">
+                            <connections>
+                                <action selector="sortButtonClicked:" destination="BYZ-38-t0r" id="qbZ-R7-T5a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="bAq-EF-Gte" id="Jbv-6X-1jt"/>
                         <outlet property="characterTV" destination="JiQ-4R-RCl" id="rQ9-VD-7E8"/>
                         <outlet property="loadingLabel" destination="GY7-rd-DTV" id="leo-h2-sSj"/>
                         <outlet property="loadingView" destination="qyN-XS-Cep" id="vtU-E4-mf4"/>
                         <outlet property="reessayerButton" destination="CvH-fL-eqF" id="JOs-S2-fsL"/>
+                        <outlet property="sortPicker" destination="ej8-M9-bpw" id="uip-c7-fMv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

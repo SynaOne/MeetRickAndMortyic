@@ -17,6 +17,7 @@ class CharacterListeVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var reessayerButton: UIButton!
+    @IBOutlet weak var sortPicker: UIPickerView!
 
     // MARK: - Private var
     private var datasAreLoaded = false
@@ -29,6 +30,7 @@ class CharacterListeVC: UIViewController {
         }
     }
     private let cellSpacingHeight: CGFloat = 10
+    private var isSortApply = false
 
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -61,6 +63,10 @@ class CharacterListeVC: UIViewController {
     @IBAction func reessayerButtonClicked(_ sender: UIButton) {
 
         loadDatas()
+    }
+
+    @IBAction func sortButtonClicked(_ sender: UIBarButtonItem) {
+        sortPicker.isHidden = false
     }
     
     // MARK: - Public func
@@ -124,6 +130,10 @@ class CharacterListeVC: UIViewController {
                     strongSelf.characterResponse?.setResults(newResults: characters.results)
                     strongSelf.characterResponse?.setNewInfo(infos: characters.info)
 
+                    if strongSelf.isSortApply {
+                        strongSelf.applySort(PickerSortEnum.allCases[strongSelf.sortPicker.selectedRow(inComponent: 0)])
+                    }
+
                     strongSelf.characterTV.reloadData()
                 }
             }
@@ -139,6 +149,50 @@ class CharacterListeVC: UIViewController {
             destinationVC.character = cellCharacter
             destinationVC.title = cellCharacter.name
         }
+    }
+
+    // MARK: - Private func
+    private func applySort(_ sort: PickerSortEnum) {
+
+        switch sort {
+        case .genderAlpha:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.gender.rawValue < second.gender.rawValue
+            })
+        case .genderAlphaInverse:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.gender.rawValue > second.gender.rawValue
+            })
+        case .nameAlpha:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.name < second.name
+            })
+        case .nameAlphaInverse:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.name > second.name
+            })
+        case .noSort:
+            break
+        case .speciesAlpha:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.species < second.species
+            })
+        case .speciesAlphaInverse:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.species > second.species
+            })
+        case .statusAlpha:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.status.rawValue < second.status.rawValue
+            })
+        case .statusAlphaInverse:
+            characterResponse?.results.sort(by: { (first, second) in
+                first.status.rawValue > second.status.rawValue
+            })
+        }
+        characterTV.reloadData()
+
+        isSortApply = true
     }
 }
 
@@ -187,5 +241,42 @@ extension CharacterListeVC: UITableViewDataSource {
         }
         return characterCell
     }
+    
+}
+
+extension CharacterListeVC: UIPickerViewDelegate {
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        if PickerSortEnum.allCases.indices.contains(row) {
+            return PickerSortEnum.allCases[row].rawValue
+        } else {
+            return nil
+        }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+        if PickerSortEnum.allCases.indices.contains(row) {
+
+            pickerView.isHidden = true
+
+            applySort(PickerSortEnum.allCases[row])
+
+        }
+    }
+}
+
+extension CharacterListeVC: UIPickerViewDataSource {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return PickerSortEnum.allCases.count
+    }
+    
+
     
 }

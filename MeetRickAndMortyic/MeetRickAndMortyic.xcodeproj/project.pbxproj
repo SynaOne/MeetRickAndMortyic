@@ -18,6 +18,7 @@
 		571969AE21B313CA00E74E11 /* AlamofireExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571969AD21B313CA00E74E11 /* AlamofireExtension.swift */; };
 		571969B021B313E000E74E11 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571969AF21B313E000E74E11 /* ResponseError.swift */; };
 		571969B221B313FC00E74E11 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571969B121B313FC00E74E11 /* ApiService.swift */; };
+		572B482821B70078009611B3 /* PickerSortEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B482721B70078009611B3 /* PickerSortEnum.swift */; };
 		574ECFAF21B404B500D848B1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574ECFAE21B404B400D848B1 /* CharacterCell.swift */; };
 		574ECFB121B4102A00D848B1 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574ECFB021B4102A00D848B1 /* NotificationExtension.swift */; };
 		57E0304221B4490E00CFD0E3 /* CharacterDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0304121B4490E00CFD0E3 /* CharacterDetailsVC.swift */; };
@@ -41,6 +42,7 @@
 		571969AD21B313CA00E74E11 /* AlamofireExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireExtension.swift; sourceTree = "<group>"; };
 		571969AF21B313E000E74E11 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		571969B121B313FC00E74E11 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		572B482721B70078009611B3 /* PickerSortEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSortEnum.swift; sourceTree = "<group>"; };
 		574ECFAE21B404B400D848B1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		574ECFB021B4102A00D848B1 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		57E0304121B4490E00CFD0E3 /* CharacterDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsVC.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				571969AD21B313CA00E74E11 /* AlamofireExtension.swift */,
 				571969AF21B313E000E74E11 /* ResponseError.swift */,
 				574ECFB021B4102A00D848B1 /* NotificationExtension.swift */,
+				572B482721B70078009611B3 /* PickerSortEnum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				57E0304221B4490E00CFD0E3 /* CharacterDetailsVC.swift in Sources */,
 				5719699521B30A2800E74E11 /* CharacterListeVC.swift in Sources */,
 				571969A821B3137000E74E11 /* CharacterResponse.swift in Sources */,
+				572B482821B70078009611B3 /* PickerSortEnum.swift in Sources */,
 				574ECFAF21B404B500D848B1 /* CharacterCell.swift in Sources */,
 				57E0304921B4575000CFD0E3 /* PlanetResponse.swift in Sources */,
 				5719699321B30A2800E74E11 /* AppDelegate.swift in Sources */,
