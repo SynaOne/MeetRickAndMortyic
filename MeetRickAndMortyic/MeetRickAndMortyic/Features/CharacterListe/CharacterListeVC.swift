@@ -208,6 +208,22 @@ extension CharacterListeVC: UITableViewDelegate {
             }
         }
     }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+
+        if !sortPicker.isHidden {
+
+            UIView.transition(with: sortPicker,
+                              duration: 1,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                self.sortPicker.alpha = 0
+                              }, completion: { finished in
+                                self.sortPicker.isHidden = true
+                                self.sortPicker.alpha = 1
+                              })
+        }
+    }
 }
 
 extension CharacterListeVC: UITableViewDataSource {
