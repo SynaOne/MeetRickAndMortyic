@@ -86,9 +86,7 @@ class CharacterListeVC: UIViewController {
         reessayerButton.isHidden = true
         loadingView.isHidden = false
 
-        let apiService = ApiService()
-
-        apiService.getCharacters { [weak self] characterResponse in
+        ApiService.sharedApiService.getCharacters { [weak self] characterResponse in
 
             guard let strongSelf = self else { return }
 
@@ -115,10 +113,8 @@ class CharacterListeVC: UIViewController {
 
     func loadMoreDatas() {
 
-        let apiService = ApiService()
-
         if let urlToCall = characterResponse?.info.next {
-            apiService.getCharacters(urlToCall: urlToCall) { [weak self] characterResponse in
+            ApiService.sharedApiService.getCharacters(urlToCall: urlToCall) { [weak self] characterResponse in
 
                 guard let strongSelf = self else { return }
 

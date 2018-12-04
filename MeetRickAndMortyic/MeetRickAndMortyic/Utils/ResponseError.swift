@@ -10,4 +10,5 @@ import Foundation
 
 enum ResponseError: Error {
     case InvalidJSON
+    case InvalidImage
 }

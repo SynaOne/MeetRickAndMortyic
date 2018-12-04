@@ -44,9 +44,7 @@ class PlanetInfoDisplay: UIView {
 
         timeBasedLabel.text = "\(isOrigin ? "Origin" : "Current") location:"
 
-        let apiService = ApiService()
-
-        apiService.getPlanetInfos(url: planet.url) { [weak self] planetResponse in
+        ApiService.sharedApiService.getPlanetInfos(url: planet.url) { [weak self] planetResponse in
 
             guard let strongSelf = self else { return }
 

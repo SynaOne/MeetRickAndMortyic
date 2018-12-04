@@ -15,9 +15,13 @@ protocol ApiServiceProtocol {
                        completion: @escaping (Result<CharacterResponse>) -> Void)
     func getPlanetInfos(url: String,
                         completion: @escaping (Result<PlanetResponse>) -> Void)
+    func loadImage(imageUrl: String,
+                   completion: @escaping (Result<Data>) -> Void)
 }
 
 class ApiService: ApiServiceProtocol {
+
+    static let sharedApiService = ApiService()
 
     func getCharacters(urlToCall: String? = nil,
                        completion: @escaping (Result<CharacterResponse>) -> Void) {
@@ -60,5 +64,24 @@ class ApiService: ApiServiceProtocol {
                     completion(Result<PlanetResponse>.failure(error))
                 }
         }
+    }
+
+    func loadImage(imageUrl: String,
+                   completion: @escaping (Result<Data>) -> Void) {
+
+        Alamofire.request(imageUrl).responseData(completionHandler: { dataResponse in
+
+            switch dataResponse.result {
+            case .failure:
+                completion(Result<Data>.failure(ResponseError.InvalidImage))
+                break
+            case .success(let data):
+                if data.count == 0 {
+                    completion(Result<Data>.failure(ResponseError.InvalidImage))
+                } else {
+                    completion(Result<Data>.success(data))
+                }
+            }
+        })
     }
 }

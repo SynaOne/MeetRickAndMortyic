@@ -60,24 +60,20 @@ final class Character {
         loadImage()
     }
 
-    func loadImage() {
+    private func loadImage() {
 
-        Alamofire.request(imageUrl).responseData(completionHandler: { [weak self] dataResponse in
+        ApiService.sharedApiService.loadImage(imageUrl: self.imageUrl) { [weak self] imageData in
 
             guard let strongSelf = self else { return }
 
-            switch dataResponse.result {
-            case .failure:
-                // On ne fait rien
-                break
-            case .success(let data):
-                strongSelf.image = data
+            if let imageDataValue = imageData.value {
+                strongSelf.image = imageDataValue
 
                 NotificationCenter.default.post(name: .imageLoaded,
                                                 object: nil,
                                                 userInfo: ["characterId": strongSelf.id])
             }
-        })
+        }
     }
 
 }
