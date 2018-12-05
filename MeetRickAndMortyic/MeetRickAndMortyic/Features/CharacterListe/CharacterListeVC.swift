@@ -27,40 +27,17 @@ class CharacterListeVC: UIViewController {
     private let cellSpacingHeight: CGFloat = 10
     private var isSortActivated = false
     private var charactersFiltered: [Character] {
-        if currentApplicatedFilters.count == 0 {
-            return characters
-        } else {
-            var charactersFilteredOutput = [Character]()
+        var charactersFilterdOutput = [Character]()
 
-            for character in characters {
+        for character in characters {
+            character.setAsToBoDisplayed(filters: currentApplicatedFilters)
 
-                var appendCharacter = false
-
-                for filter in currentApplicatedFilters {
-
-                    switch filter.1 {
-                    case .gender:
-                        if character.gender.rawValue == filter.0 {
-                            appendCharacter = true
-                        }
-                    case .species:
-                        if character.species == filter.0 {
-                            appendCharacter = true
-                        }
-                    case .status:
-                        if character.status.rawValue == filter.0 {
-                            appendCharacter = true
-                        }
-                    }
-                }
-
-                if appendCharacter {
-                    charactersFilteredOutput.append(character)
-                }
+            if character.asToBeDisplayed {
+                charactersFilterdOutput.append(character)
             }
-
-            return charactersFilteredOutput
         }
+
+        return charactersFilterdOutput
     }
 
     var currentApplicatedFilters = [(String, FiltersEnum)]() {

@@ -25,6 +25,7 @@ final class Character {
     let episode: [String]
     let url: String
     let created: Date
+    var asToBeDisplayed: Bool = false
 
     init(json: JSON) throws {
 
@@ -76,6 +77,22 @@ final class Character {
         }
     }
 
+    func setAsToBoDisplayed(filters: [(String, FiltersEnum)]) {
+
+        if filters.count == 0 {
+            asToBeDisplayed = true
+        } else {
+            let genderFilters = filters.filter { $0.1 == FiltersEnum.gender }
+            let speciesFilters = filters.filter { $0.1 == FiltersEnum.species }
+            let statusFilters = filters.filter { $0.1 == FiltersEnum.status }
+
+            if genderFilters.contains(where: { $0.0 == gender.rawValue })
+                || speciesFilters.contains(where: { $0.0 == species })
+                || statusFilters.contains(where: { $0.0 == status.rawValue }) {
+                asToBeDisplayed = true
+            }
+        }
+    }
 }
 
 enum CharacterStatus: String {
