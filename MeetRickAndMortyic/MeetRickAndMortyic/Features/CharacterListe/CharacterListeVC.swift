@@ -66,9 +66,7 @@ class CharacterListeVC: UIViewController {
 
         super.viewWillAppear(animated)
 
-        if currentApplicatedFilters.count != 0 {
-            characterTV.reloadData()
-        }
+        characterTV.reloadData()
 
         NotificationCenter.default.addObserver(self,
 
