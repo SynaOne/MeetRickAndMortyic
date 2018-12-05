@@ -23,16 +23,53 @@ class CharacterListeVC: UIViewController {
     // MARK: - Private var
     private var datasAreLoaded = false
     private var characterResponse: CharacterResponse?
-    private var characters: [Character] {
+    private let cellSpacingHeight: CGFloat = 10
+    private var isSortActivated = false
+    private var charactersFiltered: [Character] {
+        if currentApplicatedFilters.count == 0 {
+            return characters
+        } else {
+            var charactersFilteredOutput = [Character]()
+
+            for character in characters {
+
+                var appendCharacter = false
+
+                for filter in currentApplicatedFilters {
+
+                    switch filter.1 {
+                    case .gender:
+                        if character.gender.rawValue == filter.0 {
+                            appendCharacter = true
+                        }
+                    case .species:
+                        if character.species == filter.0 {
+                            appendCharacter = true
+                        }
+                    case .status:
+                        if character.status.rawValue == filter.0 {
+                            appendCharacter = true
+                        }
+                    }
+                }
+
+                if appendCharacter {
+                    charactersFilteredOutput.append(character)
+                }
+            }
+
+            return charactersFilteredOutput
+        }
+    }
+
+    var currentApplicatedFilters = [(String, FiltersEnum)]()
+    var characters: [Character] {
         if let characters = characterResponse?.results {
             return characters
         } else {
             return [Character]()
         }
     }
-    private let cellSpacingHeight: CGFloat = 10
-    private var isSortActivated = false
-
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +83,12 @@ class CharacterListeVC: UIViewController {
 
         super.viewWillAppear(animated)
 
+        if currentApplicatedFilters.count != 0 {
+            characterTV.reloadData()
+        }
+
         NotificationCenter.default.addObserver(self,
+
                                                selector: #selector(onNotifImageLoaded),
                                                name: .imageLoaded,
                                                object: nil)
@@ -152,6 +194,12 @@ class CharacterListeVC: UIViewController {
 
             destinationVC.character = cellCharacter
             destinationVC.title = cellCharacter.name
+        } else if segue.identifier == "FilterSelection",
+            let destinationVC = segue.destination as? FilterSelectionVC {
+
+            sortPicker.isHidden = true
+            destinationVC.characterListe = characters
+            destinationVC.currentApplicatedFilters = currentApplicatedFilters
         }
     }
 
@@ -207,7 +255,7 @@ extension CharacterListeVC: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
-        if indexPath.section == characters.count - 1 {
+        if indexPath.section == charactersFiltered.count - 1 {
             
             view.setNeedsLayout()
             if characterResponse?.info.next != nil {
@@ -242,7 +290,7 @@ extension CharacterListeVC: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
 
-        return characters.count
+        return charactersFiltered.count
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -254,13 +302,13 @@ extension CharacterListeVC: UITableViewDataSource {
         let cell = characterTV.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
 
         guard let characterCell = cell as? CharacterCell,
-            indexPath.section < characters.count
+            indexPath.section < charactersFiltered.count
             else {
                 return UITableViewCell()
         }
 
-        if characters.indices.contains(indexPath.section) {
-            characterCell.setup(character: characters[indexPath.section])
+        if charactersFiltered.indices.contains(indexPath.section) {
+            characterCell.setup(character: charactersFiltered[indexPath.section])
         }
         return characterCell
     }

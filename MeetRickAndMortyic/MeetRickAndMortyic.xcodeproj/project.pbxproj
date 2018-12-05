@@ -20,8 +20,11 @@
 		571969B221B313FC00E74E11 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571969B121B313FC00E74E11 /* ApiService.swift */; };
 		572B482821B70078009611B3 /* PickerSortEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B482721B70078009611B3 /* PickerSortEnum.swift */; };
 		572B482A21B70F95009611B3 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B482921B70F95009611B3 /* ToastMessage.swift */; };
+		572B482E21B71A12009611B3 /* FilterSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B482D21B71A12009611B3 /* FilterSelectionVC.swift */; };
 		574ECFAF21B404B500D848B1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574ECFAE21B404B400D848B1 /* CharacterCell.swift */; };
 		574ECFB121B4102A00D848B1 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574ECFB021B4102A00D848B1 /* NotificationExtension.swift */; };
+		57520C1421B72D4F00456A83 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57520C1321B72D4F00456A83 /* ArrayExtension.swift */; };
+		575EED6E21B73730001A953E /* FiltersEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575EED6D21B73730001A953E /* FiltersEnum.swift */; };
 		57E0304221B4490E00CFD0E3 /* CharacterDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0304121B4490E00CFD0E3 /* CharacterDetailsVC.swift */; };
 		57E0304521B4500B00CFD0E3 /* PlanetInfoDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E0304421B4500B00CFD0E3 /* PlanetInfoDisplay.xib */; };
 		57E0304721B4520600CFD0E3 /* PlanetInfoDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0304621B4520600CFD0E3 /* PlanetInfoDisplay.swift */; };
@@ -45,8 +48,11 @@
 		571969B121B313FC00E74E11 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		572B482721B70078009611B3 /* PickerSortEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSortEnum.swift; sourceTree = "<group>"; };
 		572B482921B70F95009611B3 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		572B482D21B71A12009611B3 /* FilterSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectionVC.swift; sourceTree = "<group>"; };
 		574ECFAE21B404B400D848B1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		574ECFB021B4102A00D848B1 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		57520C1321B72D4F00456A83 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		575EED6D21B73730001A953E /* FiltersEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersEnum.swift; sourceTree = "<group>"; };
 		57E0304121B4490E00CFD0E3 /* CharacterDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsVC.swift; sourceTree = "<group>"; };
 		57E0304421B4500B00CFD0E3 /* PlanetInfoDisplay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetInfoDisplay.xib; sourceTree = "<group>"; };
 		57E0304621B4520600CFD0E3 /* PlanetInfoDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoDisplay.swift; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 				574ECFB021B4102A00D848B1 /* NotificationExtension.swift */,
 				572B482721B70078009611B3 /* PickerSortEnum.swift */,
 				572B482921B70F95009611B3 /* ToastMessage.swift */,
+				57520C1321B72D4F00456A83 /* ArrayExtension.swift */,
+				575EED6D21B73730001A953E /* FiltersEnum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 			children = (
 				5719699421B30A2800E74E11 /* CharacterListeVC.swift */,
 				574ECFAE21B404B400D848B1 /* CharacterCell.swift */,
+				572B482D21B71A12009611B3 /* FilterSelectionVC.swift */,
 			);
 			path = CharacterListe;
 			sourceTree = "<group>";
@@ -310,15 +319,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E0304721B4520600CFD0E3 /* PlanetInfoDisplay.swift in Sources */,
+				57520C1421B72D4F00456A83 /* ArrayExtension.swift in Sources */,
 				574ECFB121B4102A00D848B1 /* NotificationExtension.swift in Sources */,
 				571969A621B3132F00E74E11 /* Character.swift in Sources */,
 				57E0304221B4490E00CFD0E3 /* CharacterDetailsVC.swift in Sources */,
 				5719699521B30A2800E74E11 /* CharacterListeVC.swift in Sources */,
 				571969A821B3137000E74E11 /* CharacterResponse.swift in Sources */,
 				572B482821B70078009611B3 /* PickerSortEnum.swift in Sources */,
+				572B482E21B71A12009611B3 /* FilterSelectionVC.swift in Sources */,
 				574ECFAF21B404B500D848B1 /* CharacterCell.swift in Sources */,
 				57E0304921B4575000CFD0E3 /* PlanetResponse.swift in Sources */,
 				5719699321B30A2800E74E11 /* AppDelegate.swift in Sources */,
+				575EED6E21B73730001A953E /* FiltersEnum.swift in Sources */,
 				571969AE21B313CA00E74E11 /* AlamofireExtension.swift in Sources */,
 				571969AA21B3138900E74E11 /* CharactersInfo.swift in Sources */,
 				571969B221B313FC00E74E11 /* ApiService.swift in Sources */,
