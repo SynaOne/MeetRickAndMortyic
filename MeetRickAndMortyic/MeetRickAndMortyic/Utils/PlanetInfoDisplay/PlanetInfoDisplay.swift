@@ -57,7 +57,7 @@ class PlanetInfoDisplay: UIView {
             } else {
 
                 strongSelf.planetName.text = "Name: \(planet.name)"
-                strongSelf.planetType.text = "Impossible de charger les autres informations pour le moment"
+                strongSelf.planetType.text = "Failed to load more informations for now."
                 strongSelf.planetDimension.text = ""
                 strongSelf.planetNumberOfResidents.text = ""
             }

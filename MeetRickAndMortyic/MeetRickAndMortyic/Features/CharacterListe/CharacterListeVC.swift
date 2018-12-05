@@ -131,7 +131,7 @@ class CharacterListeVC: UIViewController {
 
         characterTV.isHidden = true
         activityIndicator.startAnimating()
-        loadingLabel.text = "Chargement en cours..."
+        loadingLabel.text = "Loading..."
         reessayerButton.isHidden = true
         loadingView.isHidden = false
 
@@ -153,7 +153,7 @@ class CharacterListeVC: UIViewController {
 
                 strongSelf.activityIndicator.stopAnimating()
                 strongSelf.activityIndicator.isHidden = true
-                strongSelf.loadingLabel.text = "Chargement impossible.\nVeuillez réessayer plus tard."
+                strongSelf.loadingLabel.text = "Loading failed.\nPlease retry later."
                 strongSelf.reessayerButton.isHidden = false
             }
 

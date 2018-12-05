@@ -193,15 +193,15 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bAq-EF-Gte">
                                         <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chargement en cours..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY7-rd-DTV">
-                                        <rect key="frame" x="107.5" y="348.5" width="160.5" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY7-rd-DTV">
+                                        <rect key="frame" x="154" y="348.5" width="67.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvH-fL-eqF">
-                                        <rect key="frame" x="152" y="376.5" width="71" height="30"/>
-                                        <state key="normal" title="Réessayer"/>
+                                        <rect key="frame" x="169" y="376.5" width="37" height="30"/>
+                                        <state key="normal" title="Retry"/>
                                         <connections>
                                             <action selector="reessayerButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j29-Jo-xSQ"/>
                                         </connections>
@@ -248,10 +248,9 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-Xz-tu3">
-                                                                    <rect key="frame" x="13.5" y="29.5" width="98" height="50.5"/>
-                                                                    <string key="text">Erreur lors
-du chargement
-de l'avatar</string>
+                                                                    <rect key="frame" x="24" y="38" width="77" height="33.5"/>
+                                                                    <string key="text">Error during
+the loading</string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -427,10 +426,9 @@ de l'avatar</string>
                                         </constraints>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iP-0Y-Je2">
-                                        <rect key="frame" x="135.5" y="93" width="104" height="54"/>
-                                        <string key="text">Erreur lors
-du chargement
-de l'avatar</string>
+                                        <rect key="frame" x="146.5" y="102" width="82" height="36"/>
+                                        <string key="text">Error during
+the loading</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
