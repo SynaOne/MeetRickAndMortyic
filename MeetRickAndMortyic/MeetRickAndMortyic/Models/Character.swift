@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-final class Character {
+final class Character: Equatable {
 
     let id: Int
     let name: String
@@ -59,6 +59,17 @@ final class Character {
         self.created = Date()
 
         loadImage()
+    }
+
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.episode == rhs.episode
+            && lhs.gender == rhs.gender
+            && lhs.id == rhs.id
+            && lhs.imageUrl == rhs.imageUrl
+            && lhs.name == rhs.name
+            && lhs.species == rhs.species
+            && lhs.status == rhs.status
+            && lhs.url == rhs.url
     }
 
     private func loadImage() {

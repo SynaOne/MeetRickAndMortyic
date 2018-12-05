@@ -379,6 +379,7 @@ the loading</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Rick And Morty" id="7F0-fe-95X">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Item" id="j0M-Ba-izD"/>
                         <rightBarButtonItems>
                             <barButtonItem title="Sort" id="rdc-YR-WoW">
                                 <connections>
@@ -396,6 +397,7 @@ the loading</string>
                     <connections>
                         <outlet property="activityIndicator" destination="bAq-EF-Gte" id="Jbv-6X-1jt"/>
                         <outlet property="characterTV" destination="JiQ-4R-RCl" id="rQ9-VD-7E8"/>
+                        <outlet property="charactersCount" destination="j0M-Ba-izD" id="NTh-Gr-Bwu"/>
                         <outlet property="filterButton" destination="smn-8t-wtR" id="I6i-2q-tCF"/>
                         <outlet property="loadingLabel" destination="GY7-rd-DTV" id="leo-h2-sSj"/>
                         <outlet property="loadingView" destination="qyN-XS-Cep" id="vtU-E4-mf4"/>

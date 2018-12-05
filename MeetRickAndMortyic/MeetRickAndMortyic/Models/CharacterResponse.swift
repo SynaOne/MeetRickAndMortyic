@@ -14,6 +14,10 @@ class CharacterResponse {
     var info: CharactersInfo
     var results: [Character]
 
+    var asMoreCharactersToLoad: Bool {
+        return info.count > results.count
+    }
+
     init(json: JSON) throws {
 
         guard
@@ -27,12 +31,14 @@ class CharacterResponse {
 
         self.info = info
         self.results = characters
+
     }
 
     public func setResults(newResults: [Character],
                            keepOldResults: Bool = true) {
 
-        self.results = results + newResults
+        self.results = (results + newResults).removeDuplicates()
+
     }
 
     public func setNewInfo(infos: CharactersInfo) {

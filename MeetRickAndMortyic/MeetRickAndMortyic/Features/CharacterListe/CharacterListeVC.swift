@@ -20,6 +20,7 @@ class CharacterListeVC: UIViewController {
     @IBOutlet weak var sortPicker: UIPickerView!
     @IBOutlet weak var sortButton: UIBarButtonItem!
     @IBOutlet weak var filterButton: UIBarButtonItem!
+    @IBOutlet weak var charactersCount: UIBarButtonItem!
 
     // MARK: - Private var
     private var datasAreLoaded = false
@@ -44,6 +45,9 @@ class CharacterListeVC: UIViewController {
     var currentApplicatedFilters = [(String, FiltersEnum)]() {
         didSet {
             filterButton.title = "Filters\(currentApplicatedFilters.count > 0 ? " ✔" : "")"
+            characterTV.scrollToRow(at: IndexPath(row: 0, section: 0),
+                                    at: .top,
+                                    animated: true)
         }
     }
     var characters: [Character] {
@@ -53,6 +57,7 @@ class CharacterListeVC: UIViewController {
             return [Character]()
         }
     }
+
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,7 +148,10 @@ class CharacterListeVC: UIViewController {
 
     func loadMoreDatas() {
 
-        if let urlToCall = characterResponse?.info.next {
+        if let characterResponse = characterResponse,
+            characterResponse.asMoreCharactersToLoad {
+
+            let urlToCall = characterResponse.info.next
             ApiService.sharedApiService.getCharacters(urlToCall: urlToCall) { [weak self] characterResponse in
 
                 guard let strongSelf = self else { return }
@@ -156,7 +164,7 @@ class CharacterListeVC: UIViewController {
 
                     if strongSelf.isSortActivated {
                         strongSelf.sortButton.title = "Sort"
-                        strongSelf.showToast(message: "Filter desactivated.\nReason: New characters loaded.")
+                        strongSelf.showToast(message: "Sort desactivated.\nReason: New characters loaded.")
                         strongSelf.isSortActivated = false
                     }
 
@@ -271,6 +279,7 @@ extension CharacterListeVC: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
 
+        charactersCount.title = "\(charactersFiltered.count) chars"
         return charactersFiltered.count
     }
 

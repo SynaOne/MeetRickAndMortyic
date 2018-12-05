@@ -108,12 +108,12 @@ class FilterSelectionVC: UIViewController {
             stackViewVertical.axis = .horizontal
             stackViewVertical.spacing = 10
 
+            let filterSwitch = UISwitch()
+            stackViewVertical.addArrangedSubview(filterSwitch)
+
             let filterLabel = UILabel()
             filterLabel.text = filter
             stackViewVertical.addArrangedSubview(filterLabel)
-
-            let filterSwitch = UISwitch()
-            stackViewVertical.addArrangedSubview(filterSwitch)
 
             if currentApplicatedFilters.contains(where: { currentFilter in
                 currentFilter.0 == filter && currentFilter.1 == filterType
