@@ -30,6 +30,7 @@ class CharacterListeVC: UIViewController {
         var charactersFilterdOutput = [Character]()
 
         for character in characters {
+
             character.setAsToBoDisplayed(filters: currentApplicatedFilters)
 
             if character.asToBeDisplayed {

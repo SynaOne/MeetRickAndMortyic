@@ -90,6 +90,8 @@ final class Character {
                 || speciesFilters.contains(where: { $0.0 == species })
                 || statusFilters.contains(where: { $0.0 == status.rawValue }) {
                 asToBeDisplayed = true
+            } else {
+                asToBeDisplayed = false
             }
         }
     }
