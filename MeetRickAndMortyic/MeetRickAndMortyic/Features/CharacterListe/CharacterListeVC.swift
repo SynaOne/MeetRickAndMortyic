@@ -19,6 +19,7 @@ class CharacterListeVC: UIViewController {
     @IBOutlet weak var reessayerButton: UIButton!
     @IBOutlet weak var sortPicker: UIPickerView!
     @IBOutlet weak var sortButton: UIBarButtonItem!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
 
     // MARK: - Private var
     private var datasAreLoaded = false
@@ -62,7 +63,11 @@ class CharacterListeVC: UIViewController {
         }
     }
 
-    var currentApplicatedFilters = [(String, FiltersEnum)]()
+    var currentApplicatedFilters = [(String, FiltersEnum)]() {
+        didSet {
+            filterButton.title = "Filters\(currentApplicatedFilters.count > 0 ? " ✔" : "")"
+        }
+    }
     var characters: [Character] {
         if let characters = characterResponse?.results {
             return characters
